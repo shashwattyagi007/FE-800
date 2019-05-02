@@ -270,14 +270,3 @@ lr = LogisticRegression(
 
 y_pred_lr = lr.predict(X)
 print(f1_score(y, y_pred_lr,average='binary'))
-
-sgd_huber = linear_model.SGDClassifier(
-        max_iter=1000,
-        tol=1e-3,
-        alpha=20,
-        loss='modified_huber',
-        class_weight='balanced',shuffle=True
-    ).fit(X, y)
-    
-y_pred_huber = sgd_huber.predict(X)
-print(f1_score(y, y_pred_huber, average='binary'))
